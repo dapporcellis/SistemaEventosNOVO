@@ -1,0 +1,67 @@
+<%- include('../cabecalho') -%>
+<div class="body flex-grow-1 px-3">
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="card-header"><strong>Oficina</strong></div>
+                    <div class="card-body">
+                        <div class="example">
+                            <div class="tab-content rounded-bottom">
+                                <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-739">
+                                    <form method="post">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="exampleFormControlInput1">Nome</label>
+                                            <input class="form-control" name="nome" id="exampleFormControlInput1" type="text"
+                                                placeholder="Digite o nome da oficina!">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="exampleFormControlInput1">Carga Horária</label>
+                                            <input class="form-control" name="carga" id="exampleFormControlInput1" type="number"
+                                                placeholder="Digite a carga horária da oficina!">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="exampleFormControlInput6">Data e hora da Palestra</label>
+                                            <input class="form-control" name="datahora" id="exampleFormControlInput6" type="datetime-local"
+                                                placeholder="Digite a data e hora da Oficina">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="exampleFormControlInput4">Evento</label>
+                                            <select class="form-control" name="eventoId">
+                                                <%Eventos.forEach(function(evento) {%>
+                                                <option value="<%=evento.id%>"><%=evento.nome%></option>
+                                                <%})%>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="exampleFormControlInput4">Ministrantes</label>
+                                            <select multiple class="form-control" name="ministranteId">
+                                                <%Ministrantes.forEach(function(ministrante) {%>
+                                                <option value="<%=ministrante.id%>"><%=ministrante.nome%></option>
+                                                <%})%>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label" for="exampleFormControlInput1">Vagas</label>
+                                            <input class="form-control" name="vagas" id="exampleFormControlInput1" type="number"
+                                                placeholder="Digite a quantidade de vagas da oficina!">
+                                        </div> 
+                                        <div class="mb-3">
+                                            <label class="form-label" for="exampleFormControlInput1">Ordem</label>
+                                            <input class="form-control" name="ordem" id="exampleFormControlInput1" type="number"
+                                                placeholder="Esse campo é utilizado para oficinas que acontecem no mesmo horário!">
+                                        </div>                                        
+                                        <button type="submit" class="btn btn-primary">Adicionar</button>
+                                        <button type="reset" class="btn btn-light">Limpar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../rodape') -%>
