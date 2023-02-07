@@ -68,7 +68,6 @@ async function edt(req, res) {
     await oficina.addMinistrante(ministrante);
   });
 
-
   res.redirect('/admin/oficina/lst')
 }
 //função que deleta ítens
