@@ -3,6 +3,7 @@ const router = express.Router();
 const publicController = require("../../controller/public/publicController");
 
 
+
 router.get("/:siglaano", publicController.home);
 
 router.post("/:siglaano/sobre", publicController.sobre);
