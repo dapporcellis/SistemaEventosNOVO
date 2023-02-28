@@ -29,6 +29,7 @@ module.exports = (sequelize, DataTypes) => {
     nome: DataTypes.STRING,
     frase: DataTypes.STRING,
     sobre: DataTypes.STRING,
+    siglaano: DataTypes.STRING,
     local: DataTypes.STRING,
     datainicio: DataTypes.DATE,
     datafim: DataTypes.DATE,

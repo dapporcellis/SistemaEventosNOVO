@@ -16,6 +16,11 @@ module.exports = (sequelize, DataTypes) => {
         as: 'oficinas',
         foreignKey: 'ministranteId',
       });
+      this.belongsToMany(models.Palestra, {
+        through: 'palestraministrante',
+        as: 'palestras',
+        foreignKey: 'ministranteId',
+      });
     }
   }
   Ministrante.init({

@@ -20,9 +20,14 @@
                                                 placeholder="Digite o nome do Evento!" value="<%=Evento.nome%>">
                                         </div>
                                         <div class="mb-3">
+                                            <label class="form-label" for="exampleFormControlInput1">Sigla e Ano</label>
+                                            <input class="form-control" name="siglaano" id="exampleFormControlInput1" type="text"
+                                                placeholder="Digite a sigla e o ano do evento sem espaços!" value="<%=Evento.siglaano%>">
+                                        </div>
+                                        <div class="mb-3">
                                             <label class="form-label" for="exampleFormControlInput2">Frase</label>
                                             <input class="form-control" name="frase" id="exampleFormControlInput2" type="text"
-                                                placeholder="Digite o tema do Evento!" value="<%=Evento.nome%>">
+                                                placeholder="Digite o tema do Evento!" value="<%=Evento.frase%>">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="exampleFormControlInput3">Sobre</label>
@@ -49,11 +54,11 @@
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="formFile">Banner</label>
-                                            <input class="form-control" name="banner" id="formFile" type="file">
+                                            <input class="form-control" name="banner" id="formFile1" type="file">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="formFile">Foto Sobre</label>
-                                            <input class="form-control" name="fotosobre" id="formFile" type="file">
+                                            <input class="form-control" name="fotosobre" id="formFile2" type="file">
                                         </div>
                                         <button type="submit" class="btn btn-primary">Editar</button>
                                         <button type="reset" class="btn btn-light">Limpar</button>

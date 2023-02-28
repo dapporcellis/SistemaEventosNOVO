@@ -37,18 +37,18 @@
         <div class="container">
             <div class="logo">
                 <a href="./index.html">
-                    <img src="img/logo.png" alt="">
+                    <img src="/admin/imgs/<%=Evento.logo%>" style='max-height: 60px;max-width: 60px;' alt="<%=Evento.logo%>">
                 </a>
             </div>
             <div class="nav-menu">
                 <nav class="mainmenu mobile-menu">
                     <ul>
-                        <li class="active"><a href="./index.html">Home</a></li>
-                        <li><a href="./about-us.html">Sobre</a></li>
-                        <li><a href="./speaker.html">Ministrantes</a></li>
-                        <li><a href="./schedule.html">Cronograma</a></li>
-                        <li><a href="./blog.html">Notícias</a></li>
-                        <li><a href="./contact.html">Contatos</a></li>
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a class="nav" href="#sobre">Sobre</a></li>
+                        <li><a class="nav" href="#ministrante">Ministrantes</a></li>
+                        <li><a class="nav" href="#cronograma">Cronograma</a></li>
+                        <li><a class="nav" href="#noticias">Notícias</a></li>
+                        <li><a class="nav" href="#contatos">Contatos</a></li>
                     </ul>
                 </nav>
                 <a href="#" class="primary-btn top-btn"><i class="fa fa-ticket"></i> Inscreva-se</a>
@@ -59,18 +59,15 @@
     <!-- Header End -->
 
     <!-- Hero Section Begin -->
-    <section class="hero-section set-bg" data-setbg="img/hero.jpg">
+    <section class="hero-section set-bg" data-setbg="/admin/imgs/<%=Evento.banner%>">
         <div class="container">
             <div class="row">
-                <div class="col-lg-7">
+                <div class="col-lg-10">
                     <div class="hero-text">
                         <span>10 a 12 de Outubro, IFSul - Bagé</span>
-                        <h2>Aqui vai uma frase legal!!</h2>
+                        <h2><%=Evento.frase%></h2>
                         <a href="#" class="primary-btn">Inscreva-se</a>
                     </div>
-                </div>
-                <div class="col-lg-5">
-                    <img src="img/hero-right.png" alt="">
                 </div>
             </div>
         </div>
@@ -118,17 +115,13 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="ha-pic">
-                        <img src="img/h-about.jpg" alt="">
+                        <img src="/admin/imgs/<%=Evento.fotosobre%>" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="ha-text">
-                        <h2>Sobre o Evento</h2>
-                        <p>Quando entrei no negócio de publicidade on-line, estava procurando a mágica
-                            combinação que colocaria meu site no ranking dos principais mecanismos de pesquisa, me catapultaria para
-                            na vanguarda das mentes ou indivíduos que procuram comprar meu produto e geralmente me fazem
-                            rico além dos meus sonhos mais loucos! Depois de ter sucesso no negócio por tanto tempo, sou capaz de
-                            olhar para o meu antigo eu com esse tipo de pensamento e balançar a cabeça.</p>
+                        <h2 id="sobre">Sobre o Evento</h2>
+                        <p><%=Evento.sobre%></p>
                     </div>
                 </div>
             </div>
@@ -138,7 +131,7 @@
 
     <!-- Team Member Section Begin -->
     <section class="team-member-section">
-        <div class="container">
+        <div class="container" id="ministrante">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
@@ -148,83 +141,30 @@
                 </div>
             </div>
         </div>
-        <div class="member-item set-bg" data-setbg="img/team-member/member-1.jpg">
-            <div class="mi-social">
-                <div class="mi-social-inner bg-gradient">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
+        <%Ministrantes.forEach(function(ministrante){%>
+            <div class="member-item set-bg" data-setbg="/admin/imgs/<%=ministrante.foto%>">
+                <div class="mi-social">
+                    <div class="mi-social-inner bg-gradient">
+                        <a href="<%=ministrante.facebook%>"><i class="fa fa-facebook"></i></a>
+                        <a href="<%=ministrante.instagram%>"><i class="fa fa-instagram"></i></a>
+                        <a href="<%=ministrante.twitter%>"><i class="fa fa-twitter"></i></a>
+                        <a href="<%=ministrante.linkedin%>"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="mi-text">
+                    <h5><%=ministrante.nome%></h5>
+                    <span></span>
                 </div>
             </div>
-            <div class="mi-text">
-                <h5>Emma Sandoval</h5>
-                <span>Speaker</span>
-            </div>
-        </div>
-        <div class="member-item set-bg" data-setbg="img/team-member/member-2.jpg">
-            <div class="mi-social">
-                <div class="mi-social-inner bg-gradient">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="mi-text">
-                <h5>Emma Sandoval</h5>
-                <span>Speaker</span>
-            </div>
-        </div>
-        <div class="member-item set-bg" data-setbg="img/team-member/member-3.jpg">
-            <div class="mi-social">
-                <div class="mi-social-inner bg-gradient">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="mi-text">
-                <h5>Emma Sandoval</h5>
-                <span>Speaker</span>
-            </div>
-        </div>
-        <div class="member-item set-bg" data-setbg="img/team-member/member-4.jpg">
-            <div class="mi-social">
-                <div class="mi-social-inner bg-gradient">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="mi-text">
-                <h5>Emma Sandoval</h5>
-                <span>Speaker</span>
-            </div>
-        </div>
-        <div class="member-item set-bg" data-setbg="img/team-member/member-5.jpg">
-            <div class="mi-social">
-                <div class="mi-social-inner bg-gradient">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="mi-text">
-                <h5>Emma Sandoval</h5>
-                <span>Speaker</span>
-            </div>
-        </div>
+        <%})%>
+        
         
     </section>
     <!-- Team Member Section End -->
 
     <!-- Schedule Section Begin -->
     <section class="schedule-section spad">
-        <div class="container">
+        <div class="container" id="cronograma">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
@@ -238,112 +178,52 @@
                     <div class="schedule-tab">
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                    <h5>Dia 1</h5>
-                                    <p>10 de Outubro de 2022</p>
+                                <a class="nav-link active" data-toggle="tab" href="#palestras" role="tab">
+                                    <h5>Palestras</h5>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
-                                    <h5>Dia 2</h5>
-                                    <p>11 de Outubro de 2022</p>
+                                <a class="nav-link" data-toggle="tab" href="#oficinas" role="tab">
+                                    <h5>Oficinas</h5>                                    
                                 </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
-                                    <h5>Dia 3</h5>
-                                    <p>12 de Outubro de 2022</p>
-                                </a>
-                            </li>                           
+                            </li>                                                   
                         </ul><!-- Tab panes -->
                         <div class="tab-content">
-                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
-                                <div class="st-content">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-3">
-                                                <div class="sc-pic">
-                                                    <img src="img/schedule/schedule-1.jpg" alt="">
+                            <div class="tab-pane active" id="palestras" role="tabpanel">
+                                <%Palestras.forEach(function(palestra){%>
+                                    <div class="st-content">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <div class="sc-pic">
+                                                        <img src="img/schedule/schedule-1.jpg" alt="">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-lg-5">
-                                                <div class="sc-text">
-                                                    <h4>Criando um jogo 2D em Unity</h4>
-                                                    <ul>
-                                                        <li><i class="fa fa-user"></i> Fulano de tal</li>
-                                                        <li><i class="fa fa-envelope"></i> fulano@fulano.com
+                                                <div class="col-lg-5">
+                                                    <div class="sc-text">
+                                                        <h4><%=palestra.titulo%></h4>
+                                                        <ul>
+                                                            <%palestra.ministrantes.forEach(function(ministrante){%>
+                                                                <li><i class="fa fa-user"></i> <%=ministrante.nome%></li>
+                                                                <li><i class="fa fa-envelope"></i> <%=ministrante.email%></li>
+                                                            <%})%>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <ul class="sc-widget">
+                                                        <li><i class="fa fa-clock-o"></i><%=moment(palestra.datahora).format('DD/MM/YYYY hh:mm')%></li>
+                                                        <li><i class="fa fa-map-marker"></i> <%=palestra.carga%> H
                                                         </li>
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-4">
-                                                <ul class="sc-widget">
-                                                    <li><i class="fa fa-clock-o"></i> 08:00h - 10:00h</li>
-                                                    <li><i class="fa fa-map-marker"></i> Laboratório de Informática 1
-                                                    </li>
-                                                </ul>
-                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="st-content">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-3">
-                                                <div class="sc-pic">
-                                                    <img src="img/schedule/schedule-2.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-5">
-                                                <div class="sc-text">
-                                                    <h4>NodeJs, MongoDB e Express: criando uma pequena aplicação</h4>
-                                                    <ul>
-                                                        <li><i class="fa fa-user"></i> Ciclano</li>
-                                                        <li><i class="fa fa-envelope"></i> ciclano@ciclano.com
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <ul class="sc-widget">
-                                                    <li><i class="fa fa-clock-o"></i> 08:00h- 10:00h</li>
-                                                    <li><i class="fa fa-map-marker"></i> Laboratório de informática 2
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="st-content">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-3">
-                                                <div class="sc-pic">
-                                                    <img src="img/schedule/schedule-3.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-5">
-                                                <div class="sc-text">
-                                                    <h4>JavaScript e o mercado de trabalho!</h4>
-                                                    <ul>
-                                                        <li><i class="fa fa-user"></i> John Smith</li>
-                                                        <li><i class="fa fa-envelope"></i> john@Colorlib.com
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <ul class="sc-widget">
-                                                    <li><i class="fa fa-clock-o"></i> 10:15h  - 12:00h</li>
-                                                    <li><i class="fa fa-map-marker"></i> Auditório do IFSul
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    <%})%>
                             </div>
-                            <div class="tab-pane" id="tabs-2" role="tabpanel">
+                            <div class="tab-pane" id="oficinas" role="tabpanel">
+                                <%Oficinas.forEach(function(oficina){%>
                                 <div class="st-content">
                                     <div class="container">
                                         <div class="row">
@@ -354,167 +234,27 @@
                                             </div>
                                             <div class="col-lg-5">
                                                 <div class="sc-text">
-                                                    <h4>Criando um jogo 2D em Unity</h4>
+                                                    <h4><%=oficina.nome%></h4>
                                                     <ul>
-                                                        <li><i class="fa fa-user"></i> Fulano de tal</li>
-                                                        <li><i class="fa fa-envelope"></i> fulano@fulano.com
-                                                        </li>
+                                                        <%oficina.ministrantes.forEach(function(ministrante){%>
+                                                            <li><i class="fa fa-user"></i> <%=ministrante.nome%></li>
+                                                            <li><i class="fa fa-envelope"></i> <%=ministrante.email%></li>
+                                                        <%})%>
                                                     </ul>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4">
                                                 <ul class="sc-widget">
-                                                    <li><i class="fa fa-clock-o"></i> 08:00h - 10:00h</li>
-                                                    <li><i class="fa fa-map-marker"></i> Laboratório de Informática 1
+                                                    <li><i class="fa fa-clock-o"></i><%=moment(oficina.datahora).format('DD/MM/YYYY hh:mm')%></li>
+                                                    <li><i class="fa fa-map-marker"></i> <%=oficina.carga%> H
                                                     </li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="st-content">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-3">
-                                                <div class="sc-pic">
-                                                    <img src="img/schedule/schedule-2.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-5">
-                                                <div class="sc-text">
-                                                    <h4>NodeJs, MongoDB e Express: criando uma pequena aplicação</h4>
-                                                    <ul>
-                                                        <li><i class="fa fa-user"></i> Ciclano</li>
-                                                        <li><i class="fa fa-envelope"></i> ciclano@ciclano.com
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <ul class="sc-widget">
-                                                    <li><i class="fa fa-clock-o"></i> 08:00h- 10:00h</li>
-                                                    <li><i class="fa fa-map-marker"></i> Laboratório de informática 2
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="st-content">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-3">
-                                                <div class="sc-pic">
-                                                    <img src="img/schedule/schedule-3.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-5">
-                                                <div class="sc-text">
-                                                    <h4>JavaScript e o mercado de trabalho!</h4>
-                                                    <ul>
-                                                        <li><i class="fa fa-user"></i> John Smith</li>
-                                                        <li><i class="fa fa-envelope"></i> john@Colorlib.com
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <ul class="sc-widget">
-                                                    <li><i class="fa fa-clock-o"></i> 10:15h  - 12:00h</li>
-                                                    <li><i class="fa fa-map-marker"></i> Auditório do IFSul
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tabs-3" role="tabpanel">
-                                <div class="st-content">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-3">
-                                                <div class="sc-pic">
-                                                    <img src="img/schedule/schedule-1.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-5">
-                                                <div class="sc-text">
-                                                    <h4>Criando um jogo 2D em Unity</h4>
-                                                    <ul>
-                                                        <li><i class="fa fa-user"></i> Fulano de tal</li>
-                                                        <li><i class="fa fa-envelope"></i> fulano@fulano.com
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <ul class="sc-widget">
-                                                    <li><i class="fa fa-clock-o"></i> 08:00h - 10:00h</li>
-                                                    <li><i class="fa fa-map-marker"></i> Laboratório de Informática 1
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="st-content">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-3">
-                                                <div class="sc-pic">
-                                                    <img src="img/schedule/schedule-2.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-5">
-                                                <div class="sc-text">
-                                                    <h4>NodeJs, MongoDB e Express: criando uma pequena aplicação</h4>
-                                                    <ul>
-                                                        <li><i class="fa fa-user"></i> Ciclano</li>
-                                                        <li><i class="fa fa-envelope"></i> ciclano@ciclano.com
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <ul class="sc-widget">
-                                                    <li><i class="fa fa-clock-o"></i> 08:00h- 10:00h</li>
-                                                    <li><i class="fa fa-map-marker"></i> Laboratório de informática 2
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="st-content">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-3">
-                                                <div class="sc-pic">
-                                                    <img src="img/schedule/schedule-3.jpg" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-5">
-                                                <div class="sc-text">
-                                                    <h4>JavaScript e o mercado de trabalho!</h4>
-                                                    <ul>
-                                                        <li><i class="fa fa-user"></i> John Smith</li>
-                                                        <li><i class="fa fa-envelope"></i> john@Colorlib.com
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <ul class="sc-widget">
-                                                    <li><i class="fa fa-clock-o"></i> 10:15h  - 12:00h</li>
-                                                    <li><i class="fa fa-map-marker"></i> Auditório do IFSul
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>                            
+                                <%})%>
+                            </div>                          
                         </div>
                     </div>
                 </div>
@@ -527,7 +267,7 @@
 
     <!-- latest BLog Section Begin -->
     <section class="latest-blog spad">
-        <div class="container">
+        <div class="container" id="noticias">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
@@ -571,7 +311,7 @@
 
     <!-- Footer Section Begin -->
     <footer class="footer-section">
-        <div class="container">
+        <div class="container" id="contatos">
             <div class="partner-logo owl-carousel">
                 <a href="#" class="pl-table">
                     <div class="pl-tablecell">
@@ -643,11 +383,21 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
     <script>
-        var timerdate = "2022/12/30"; 
+        var timerdate = '<%=moment(Evento.datainicio).format("YYYY-MM-DD")%>'; 
 
         $("#countdown").countdown(timerdate, function(event) {
             $(this).html(event.strftime("<div class='cd-item'><span>%D</span> <p>Dias</p> </div>" + "<div class='cd-item'><span>%H</span> <p>Horas</p> </div>" + "<div class='cd-item'><span>%M</span> <p>Minutos</p> </div>" + "<div class='cd-item'><span>%S</span> <p>Segundos</p> </div>"));
         });
+
+        $('.nav a[href^="#"]').on('click', function(e) {
+  e.preventDefault();
+  var id = $(this).attr('href'),
+  targetOffset = $(id).offset().top;
+    
+  $('html, body').animate({ 
+    scrollTop: targetOffset - 100
+  }, 500);
+});
     </script>
 </body>
 

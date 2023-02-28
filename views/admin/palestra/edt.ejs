@@ -13,29 +13,33 @@
                                         <div class="mb-3">
                                             <label class="form-label" for="exampleFormControlInput1">Id</label>
                                             <input class="form-control" readonly name="id" id="exampleFormControlInput1" type="text"
-                                                placeholder="Digite o nome da oficina!" value="<%=Oficina.id%>">
+                                                 value="<%=Palestra.id%>">
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label" for="exampleFormControlInput1">Nome</label>
-                                            <input class="form-control" name="nome" id="exampleFormControlInput1" type="text"
-                                                placeholder="Digite o nome da oficina!" value="<%=Oficina.nome%>">
+                                            <label class="form-label" for="exampleFormControlInput1">Palestra</label>
+                                            <input class="form-control" name="titulo" id="exampleFormControlInput1" type="text"
+                                                placeholder="Digite o titulo da palestra!" value="<%=Palestra.resumo%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="exampleFormControlInput3">Resumo</label>
+                                            <textarea name="resumo" class="form-control" id="exampleFormControlTextarea3" rows="3"><%=Palestra.resumo%></textarea>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="exampleFormControlInput1">Carga Horária</label>
                                             <input class="form-control" name="carga" id="exampleFormControlInput1" type="number"
-                                                placeholder="Digite a carga horária da oficina!" value="<%=Oficina.carga%>">
+                                                placeholder="Digite a carga horária da Palestra!" value="<%=Palestra.carga%>">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="exampleFormControlInput6">Data e hora da Palestra</label>
                                             <input class="form-control" name="datahora" id="exampleFormControlInput6" type="datetime-local"
-                                                placeholder="Digite a data e hora da Oficina" value="<%=moment(Oficina.datahora).format('YYYY-MM-DDTHH:MM')%>">
+                                                placeholder="Digite a data e hora da Palestra" value="<%=moment(Palestra.datahora).format('YYYY-MM-DDTHH:MM')%>">
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="exampleFormControlInput4">Evento</label>
                                             <select class="form-control" name="eventoId">
                                                 <%Eventos.forEach(function(evento) {%>
                                                 <option 
-                                                <%if(evento.id == Oficina.eventoId) {%>
+                                                <%if(evento.id == Palestra.eventoId) {%>
                                                     selected="selected"
                                                 <%}%>
                                                 value="<%=evento.id%>"><%=evento.nome%></option>
@@ -47,23 +51,13 @@
                                             <select multiple class="form-control" name="ministranteId">
                                                 <% Ministrantes.forEach(ministrante => { %>
                                                     <% let selected = ''; %>
-                                                    <% Oficina.ministrantes.forEach(ministranteOficina => { %>
-                                                        <% if (ministrante.id === ministranteOficina.id) { selected = 'selected'; } %>
+                                                    <% Palestra.ministrantes.forEach(ministrantePalestra => { %>
+                                                        <% if (ministrante.id === ministrantePalestra.id) { selected = 'selected'; } %>
                                                     <% }); %>
                                                     <option value="<%= ministrante.id %>" <%= selected %>><%= ministrante.nome %></option>
                                                 <% }); %>
                                             </select>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label" for="exampleFormControlInput1">Vagas</label>
-                                            <input class="form-control" name="vagas" id="exampleFormControlInput1" type="number"
-                                                placeholder="Digite a quantidade de vagas da oficina!" value="<%=Oficina.vagas%>">
-                                        </div> 
-                                        <div class="mb-3">
-                                            <label class="form-label" for="exampleFormControlInput1">Ordem</label>
-                                            <input class="form-control" name="ordem" id="exampleFormControlInput1" type="number"
-                                                placeholder="Esse campo é utilizado para oficinas que acontecem no mesmo horário!" value="<%=Oficina.ordem%>">
-                                        </div>                                        
+                                        </div>                                     
                                         <button type="submit" class="btn btn-primary">Adicionar</button>
                                         <button type="reset" class="btn btn-light">Limpar</button>
                                     </form>

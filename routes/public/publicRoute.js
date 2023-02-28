@@ -3,17 +3,17 @@ const router = express.Router();
 const publicController = require("../../controller/public/publicController");
 
 
-router.get("/", publicController.home);
+router.get("/:siglaano", publicController.home);
 
-router.post("/sobre", publicController.sobre);
+router.post("/:siglaano/sobre", publicController.sobre);
 
-router.post("/ministrantes", publicController.ministrantes);
+router.post("/:siglaano/ministrantes", publicController.ministrantes);
 
-router.get("/cronograma", publicController.cronograma);
+router.get("/:siglaano/cronograma", publicController.cronograma);
 
-router.get("/noticias", publicController.noticias);
+router.get("/:siglaano/noticias", publicController.noticias);
 
-router.post("/contatos", publicController.contatos);
+router.post("/:siglaano/contatos", publicController.contatos);
 
 
 module.exports = router;

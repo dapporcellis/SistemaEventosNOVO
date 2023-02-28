@@ -11,10 +11,10 @@ router.get("/palestra/add", palestraController.abreadd);
 //rota que adiciona o palestra
 router.post("/palestra/add", palestraController.add);
 //rota para abrir a tela de editar palestra
-router.get("/palestra/edt", palestraController.abreedt);
+router.get("/palestra/edt/:id", palestraController.abreedt);
 //rota para editar o palestra
-router.post("/palestra/edt", palestraController.edt);
+router.post("/palestra/edt/:id", palestraController.edt);
 //rota para deletar palestra
-router.get("/palestra/del", palestraController.del);
+router.get("/palestra/del/:id", palestraController.del);
 
 module.exports = router;

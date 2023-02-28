@@ -24,12 +24,14 @@ async function abreadd(req, res) {
 }
 //função que adiciona
 async function add(req, res) {
+  console.log(req.files.logo[0].filename)
   
   const evento = await Evento.create({
     nome: req.body.nome,
     frase: req.body.frase,
     sobre: req.body.sobre,
     local: req.body.local,
+    siglaano: req.body.siglaano,
     datainicio: req.body.datainicio,
     datafim: req.body.datafim,
     logo: req.files.logo[0].filename,
@@ -51,11 +53,12 @@ async function edt(req, res) {
     frase: req.body.frase,
     sobre: req.body.sobre,
     local: req.body.local,
+    siglaano: req.body.siglaano,
     datainicio: req.body.datainicio,
     datafim: req.body.datafim,
-    logo: req.files['logo'].filename,
-    banner: req.files['banner'].filename,
-    fotosobre: req.files['fotosobre'].filename
+    logo: req.files.logo[0].filename,
+    banner: req.files.banner[0].filename,
+    fotosobre: req.files.fotosobre[0].filename,
   })
   res.redirect('/admin/evento/lst')
 }
